@@ -1,0 +1,54 @@
+{
+  "menu": {
+    "items": [
+      {
+        "itemName": "The Classic Big Gary",
+        "price": 16.0
+      },
+      {
+        "itemName": "The Wham Bam Burger",
+        "price": 18.0
+      },
+      {
+        "itemName": "The Waffle Supreme",
+        "price": 16.0
+      },
+      {
+        "itemName": "The Wings Special",
+        "price": 18.0
+      },
+      {
+        "itemName": "The Beef Taco Dream",
+        "price": 16.0
+      },
+      {
+        "itemName": "The Morning Avocado",
+        "price": 8.0
+      },
+      {
+        "itemName": "Onion Rings",
+        "price": 8.0
+      },
+      {
+        "itemName": "Caramel Pecan Cheesecake",
+        "price": 8.0
+      },
+      {
+        "itemName": "Refreshing Soda",
+        "price": 3.0
+      },
+      {
+        "itemName": "Creamy Caesar Salad",
+        "price": 8.0
+      },
+      {
+        "itemName": "Good Ol' Apple Pie",
+        "price": 8.0
+      },
+      {
+        "itemName": "Latte",
+        "price": 3.0
+      }
+    ]
+  }
+}
