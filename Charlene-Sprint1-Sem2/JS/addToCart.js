@@ -16,6 +16,9 @@ window.addEventListener("DOMContentLoaded", function () {
       let row = document.createElement("tr");
       row.innerHTML = `<td>${item.itemName}</td><td>${item.quantity}</td><td>$${item.price}</td><td><button class="delete">X</button></td>`;
       document.querySelector("#item-list").appendChild(row);
+      document
+        .querySelector("#item-list")
+        .scrollIntoView({ behavior: "smooth" });
     }
 
     showAlert(m, c) {
