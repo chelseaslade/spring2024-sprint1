@@ -43,17 +43,17 @@ window.addEventListener("DOMContentLoaded", function () {
 
   //Add item to list by clicking "select" button on menu
   //This works for soda only for now
-  document
-    .querySelector("#addItemButton")
-    .addEventListener("click", function () {
-      let itemName = "Refreshing Soda";
-      let quantity = 1;
-      let price = 3.0;
+  document.querySelectorAll(".addItemButton").forEach((button) => {
+    button.addEventListener("click", function () {
+      let itemName = this.dataset.itemName;
+      let quantity = this.dataset.quantity;
+      let price = this.dataset.price;
 
       let item = new Item(itemName, quantity, price);
       item.addItemToList(item);
       item.showAlert("Item added to cart.", "success");
     });
+  });
 
   document
     .querySelector("#item-list")
