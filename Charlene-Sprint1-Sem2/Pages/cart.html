@@ -12,104 +12,39 @@
   <link rel="stylesheet" href="../CSS/styleguide.css">
   <link rel="stylesheet" href="../CSS/cartStyle.css">
   <link rel="stylesheet" href="../CSS/globals.css">
+
+  <!-- Alert Styling !-->
+  <style>
+    .success,
+    .error {
+      color: white;
+      width: 600px;
+      padding: 5px;
+      margin: 5px 0 15px 0;
+      font-family: "Inter", Helvetica;
+    }
+
+    .success {
+      background-color: rgb(149, 224, 149);
+    }
+
+    .error {
+      background-color: rgb(205, 113, 113);
+    }
+  </style>
 </head>
 
 <body>
   <div class="ordering-page">
     <div class="div">
-      <div class="overlap">
-        <div class="overlap-group">
 
-          <img class="line" alt="Line divider" src="../img/line-7.svg">
-
-          <img class="line-2" alt="Line divider" src="../img/line-7.svg">
-          <img class="line-3" alt="Line divider" src="../img/line-7.svg">
-          <div class="drop-down-box">
-            <div class="search-item-1">
-              <label for="item-quantity"></label>
-              <select name="item-quantity">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="drop-down-box">
-            <div class="search-item-2">
-              <label for="item-quantity"></label>
-              <select name="item-quantity">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="drop-down-box">
-            <div class="search-item-3">
-              <label for="item-quantity"></label>
-              <select name="item-quantity">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- Cart Summary Section !-->
-
-        <div class="overlap-2">
-          <div class="element-secondary-button">
-            <button class="text-wrapper-2">X</button>
-          </div>
-          <!-- Calculate item price here !-->
-          <div class="text-wrapper-3">3.00</div>
-        </div>
-        <div class="overlap-3">
-          <div class="div-wrapper">
-            <button class="text-wrapper-2">X</button>
-          </div>
-          <!-- Calculate item price here !-->
-          <div class="text-wrapper-4">18.00</div>
-        </div>
-        <!-- Selected item list goes here !-->
-        <div class="text-wrapper-5">Creamy Caesar Salad</div>
-        <div class="text-wrapper-6">Latte</div>
-        <div class="text-wrapper-7">Big Gary</div>
-        <div class="overlap-4">
-          <!-- Calculate item price here !-->
-          <div class="text-wrapper-8">8.00</div>
-          <div class="element-secondary-button-2">
-            <button class="text-wrapper-2">X</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Add to Cart Section !-->
+      <!-- Add to Cart Section//Menu Items !-->
       <div id="addToCartMenu">
         <div class="overlap-5">
           <img class="pexels-photo" alt="Two dark cola sodas." src="../img/pexels-photo-104509-1.png">
           <div class="refreshing-soda">Refreshing Soda<br><br>$3</div>
           <div class="radio-button">
-            <button class="selectButton">Select</button>
+            <button class="selectButton" id="addItemButton">Select</button>
           </div>
         </div>
       </div>
@@ -216,7 +151,7 @@
       </div>
     </div>
 
-
+    <!-- Header with Nav Links & Logo !-->
     <div class="frame-2">
       <div class="copy">
         <div class="text-wrapper-9">Gary Blue's Diner</div>
@@ -240,6 +175,8 @@
         <div class="label"><input type="search" placeholder="Search"></div>
       </div>
     </div>
+
+    <!-- Footer w/ Social Media Links !-->
     <div class="navigation-footer">
       <div class="text-wrapper-16">Gary Blue's Diner</div>
       <div class="social-icons">
@@ -259,30 +196,24 @@
     </div>
     <img class="divider" alt="Divider line." src="../img/divider.svg">
 
-
-    <div class="text-wrapper-17">$33.35</div>
-    <div class="text-wrapper-18">Cart:</div>
-    <div class="text-wrapper-19">Item</div>
-
-
+    <!-- DOM Cart, updates on "select" menu item !-->
     <div class="overlap-14">
-      <div class="text-wrapper-20">Quantity</div>
-      <div class="text-wrapper-21">Price</div>
-      <div class="text-wrapper-22">Remove</div>
+      <div id="notification"></div>
+      <table id="data" class="table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Remove Item</th>
+          </tr>
+        </thead>
+        <tbody id="item-list">
+        </tbody>
+      </table>
     </div>
 
-
-    <img class="line-4" alt="Divider line." src="../img/line-7.svg">
-    <img class="line-5" alt="Divider line." src="../img/line-7.svg">
-    <img class="line-6" alt="Divider line." src="../img/line-7.svg">
-    <div class="text-wrapper-23">Sub-total:</div>
-    <div class="text-wrapper-24">HST:</div>
-    <div class="text-wrapper-25">$29.00</div>
-    <div class="text-wrapper-26">$4.35</div>
-    <img class="line-7" alt="Divider line." src="../img/line-7.svg">
-    <div class="text-wrapper-27">Total:</div>
-
-
+    <!-- Payment Button Link !-->
     <div class="element-button-secondary">
       <div class="text-wrapper-28">
         <a href="orderinfo.html"><button class="paymentButton">Payment information</button></a>

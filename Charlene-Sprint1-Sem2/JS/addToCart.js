@@ -2,57 +2,69 @@
 // Assignment: Sprint 1
 // Date: June 28, 2024
 
-//Select Item (Add to Cart)
+// convert the fucntional code to the OOP code.. using classes and objects
 
-// function addToCart(item, price) {
-//   let cart = localStorage.getItem("cart");
-//   if (cart === null) {
-//     //New array if cart does not yet exist
-//     cart = [];
-//   } else {
-//     //Else, add to existing cart
-//     cart = JSON.parse(cart);
-//   }
+window.addEventListener("DOMContentLoaded", function () {
+  class Item {
+    constructor(t, a, i) {
+      this.itemName = t;
+      this.quantity = a;
+      this.price = i;
+    }
 
-//   //Add item to cart
-//   cart.push({
-//     name: item,
-//     price: price,
-//     quantity: 1,
-//   });
+    addItemToList(item) {
+      let row = document.createElement("tr");
+      row.innerHTML = `<td>${item.itemName}</td><td>${item.quantity}</td><td>$${item.price}</td><td><button class="delete">X</button></td>`;
+      document.querySelector("#item-list").appendChild(row);
+    }
 
-//   //Store Cart
-//   //   localStorage.setItem("cart", JSON.stringify(cart));
+    showAlert(m, c) {
+      let div = document.createElement("div");
+      div.innerText = m;
+      div.className = c;
+      div.id = "box";
+      document.querySelector("#notification").appendChild(div);
 
-//   //Check Log
-//   console.log(cart);
-// }
+      setTimeout(function () {
+        document.querySelector("#box").remove();
+      }, 3000);
+    }
 
-// // Trouble linking JSON to cart HTML... Hard code instead using id's in HTML?
-// // ie. id="bigGary"
-// // const bigGary = {itemName: "The Big Gary", price: 16.00};
+    deleteItem(elemToDelete) {
+      if (elemToDelete.className === "delete") {
+        elemToDelete.parentElement.parentElement.remove();
+        this.showAlert("Item removed from cart.", "success");
+      }
+    }
+  }
 
-// document.addEventListener("click", function (event) {
-//   if (event.target.classList.contains("selectButton")) {
-//     const button = event.target;
-//     const itemName = button.dataset.itemName;
-//     const price = parseFloat(button.dataset.price);
+  //Add item to list by clicking "select" button on menu
+  //This works for soda only for now
+  document
+    .querySelector("#addItemButton")
+    .addEventListener("click", function () {
+      let itemName = "Refreshing Soda";
+      let quantity = 1;
+      let price = 3.0;
 
-//     addToCart(itemName, price);
-//   }
-// });
+      let item = new Item(itemName, quantity, price);
+      item.addItemToList(item);
+      item.showAlert("Item added to cart.", "success");
+    });
 
-//Remove from Cart
-function removeItem() {}
+  document
+    .querySelector("#item-list")
+    .addEventListener("click", function (evt) {
+      var item = new Item();
+      item.deleteItem(evt.target);
+      evt.preventDefault();
+    });
 
-//Calculate Item Total (Based on Quantity)
-function caclItemTot() {}
-
-//Calculate Sub-Total
-function caclSubTot() {}
-
-//Calculate HST
-function calcHST() {}
-
-//Calculate Total
-function calcTot() {}
+  this.document
+    .querySelector("#data")
+    .addEventListener("click", function (evt) {
+      var item = new Item();
+      item.deleteItem(evt.target);
+      evt.preventDefault();
+    });
+});

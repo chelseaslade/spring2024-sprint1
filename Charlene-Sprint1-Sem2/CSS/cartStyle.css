@@ -1283,6 +1283,15 @@
   height: 35px;
   top: 3998px;
   left: 575px;
+  display: flex;
+  flex-direction: column;
+}
+
+.overlap-14 h1 {
+  font-weight: 800;
+  font-family: "Inter", Helvetica;
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
 .ordering-page .text-wrapper-20 {
@@ -1494,4 +1503,27 @@
 
 .paymentButton:hover {
   color: #4c7e99;
+}
+
+.table {
+  font-size: large;
+  margin: 20px;
+  font-family: "Inter", Helvetica;
+}
+
+.table th {
+  font-size: large;
+  padding: 40px;
+  text-align: center;
+  font-family: "Inter", Helvetica;
+  font-weight: 800;
+}
+
+.table tr,
+td {
+  font-size: large;
+  padding: 40px;
+  text-align: center;
+  font-family: "Inter", Helvetica;
+  font-weight: 800;
 }
