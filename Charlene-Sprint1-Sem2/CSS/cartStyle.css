@@ -1281,8 +1281,7 @@
   position: absolute;
   width: 918px;
   height: 35px;
-  top: 3998px;
-  left: 575px;
+  top: 3850px;
   display: flex;
   flex-direction: column;
 }
@@ -1291,7 +1290,8 @@
   font-weight: 800;
   font-family: "Inter", Helvetica;
   font-size: 36px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .ordering-page .text-wrapper-20 {
@@ -1500,6 +1500,7 @@
   font-size: large;
   margin: 20px;
   font-family: "Inter", Helvetica;
+  text-align: center;
 }
 
 .table th {
